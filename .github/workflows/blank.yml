@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+template <class T>
+class ARRAY
+{
+public:
+    int val;
+    int indexe = 0;
+
+public:
+    T *ptr;
+
+public:
+    int arr[10] = {1, 2, 3, 5, 43, 4, 90};
+
+    void linearsearch(void)
+    {
+
+        cout << "Enter the target element:" << endl;
+        cin >> val;
+
+        for (T *ptr = &arr[0]; ptr < arr + 10; *ptr++)
+        {
+
+            if (*ptr != val)
+
+            {
+
+                indexe += 1;
+            }
+
+            else if (*ptr == val)
+            {
+
+                cout << "Element found at index :" << indexe << endl;
+                break;
+            }
+        }
+    }
+};
+
+int main()
+{
+
+    ARRAY<int> a;
+    a.linearsearch();
+
+    return 0;
+}
